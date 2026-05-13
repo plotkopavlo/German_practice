@@ -344,5 +344,253 @@ const VERBS_DATA = {
         },
       ]
     },
+    {
+      id: "kommunikation",
+      name: "Kommunikation (Comm.)",
+      verbs: [
+        {
+          infinitive: "rufen", en: "to call / shout", praeteritum: "rief", partizip2: "gerufen",
+          konjugation: {
+            praesens:    { "ich": "rufe",  "du": "rufst",   "er/sie/es": "ruft",  "wir": "rufen",  "ihr": "ruft",   "sie/Sie": "rufen"  },
+            praeteritum: { "ich": "rief",  "du": "riefst",  "er/sie/es": "rief",  "wir": "riefen", "ihr": "rieft",  "sie/Sie": "riefen" },
+          }
+        },
+        {
+          infinitive: "schreien", en: "to scream / shout", praeteritum: "schrie", partizip2: "geschrien",
+          konjugation: {
+            praesens:    { "ich": "schreie", "du": "schreist", "er/sie/es": "schreit", "wir": "schreien", "ihr": "schreit", "sie/Sie": "schreien" },
+            praeteritum: { "ich": "schrie",  "du": "schriest", "er/sie/es": "schrie",  "wir": "schrien",  "ihr": "schriet", "sie/Sie": "schrien"  },
+          }
+        },
+        {
+          infinitive: "lügen", en: "to lie (tell a lie)", praeteritum: "log", partizip2: "gelogen",
+          konjugation: {
+            praesens:    { "ich": "lüge", "du": "lügst", "er/sie/es": "lügt", "wir": "lügen", "ihr": "lügt", "sie/Sie": "lügen" },
+            praeteritum: { "ich": "log",  "du": "logst", "er/sie/es": "log",  "wir": "logen", "ihr": "logt", "sie/Sie": "logen" },
+          }
+        },
+        {
+          infinitive: "bitten", en: "to ask / request", praeteritum: "bat", partizip2: "gebeten",
+          konjugation: {
+            praesens:    { "ich": "bitte",  "du": "bittest",  "er/sie/es": "bittet", "wir": "bitten", "ihr": "bittet",  "sie/Sie": "bitten" },
+            praeteritum: { "ich": "bat",    "du": "batest",   "er/sie/es": "bat",    "wir": "baten",  "ihr": "batet",   "sie/Sie": "baten"  },
+          }
+        },
+        {
+          infinitive: "versprechen", en: "to promise", praeteritum: "versprach", partizip2: "versprochen",
+          konjugation: {
+            praesens:    { "ich": "verspreche",  "du": "versprichst",  "er/sie/es": "verspricht",  "wir": "versprechen",  "ihr": "versprecht",  "sie/Sie": "versprechen"  },
+            praeteritum: { "ich": "versprach",   "du": "versprachst",  "er/sie/es": "versprach",   "wir": "versprachen",  "ihr": "verspracht",  "sie/Sie": "versprachen"  },
+          }
+        },
+        {
+          infinitive: "empfehlen", en: "to recommend", praeteritum: "empfahl", partizip2: "empfohlen",
+          konjugation: {
+            praesens:    { "ich": "empfehle",  "du": "empfiehlst", "er/sie/es": "empfiehlt", "wir": "empfehlen", "ihr": "empfehlt",  "sie/Sie": "empfehlen" },
+            praeteritum: { "ich": "empfahl",   "du": "empfahlst",  "er/sie/es": "empfahl",   "wir": "empfahlen", "ihr": "empfahlt",  "sie/Sie": "empfahlen" },
+          }
+        },
+        {
+          infinitive: "einladen", en: "to invite", praeteritum: "lud ein", partizip2: "eingeladen",
+          konjugation: {
+            praesens:    { "ich": "lade ein",  "du": "lädst ein",  "er/sie/es": "lädt ein",  "wir": "laden ein", "ihr": "ladet ein", "sie/Sie": "laden ein" },
+            praeteritum: { "ich": "lud ein",   "du": "ludest ein", "er/sie/es": "lud ein",   "wir": "luden ein", "ihr": "ludet ein", "sie/Sie": "luden ein" },
+          }
+        },
+        {
+          infinitive: "beschreiben", en: "to describe", praeteritum: "beschrieb", partizip2: "beschrieben",
+          konjugation: {
+            praesens:    { "ich": "beschreibe",  "du": "beschreibst", "er/sie/es": "beschreibt", "wir": "beschreiben", "ihr": "beschreibt",  "sie/Sie": "beschreiben" },
+            praeteritum: { "ich": "beschrieb",   "du": "beschriebst", "er/sie/es": "beschrieb",  "wir": "beschrieben", "ihr": "beschriebt",  "sie/Sie": "beschrieben" },
+          }
+        },
+      ]
+    },
+    {
+      id: "sport",
+      name: "Sport & Kraft (Sports)",
+      verbs: [
+        {
+          infinitive: "springen", en: "to jump", praeteritum: "sprang", partizip2: "gesprungen",
+          konjugation: {
+            praesens:    { "ich": "springe", "du": "springst", "er/sie/es": "springt", "wir": "springen", "ihr": "springt", "sie/Sie": "springen" },
+            praeteritum: { "ich": "sprang",  "du": "sprangst", "er/sie/es": "sprang",  "wir": "sprangen", "ihr": "sprangt", "sie/Sie": "sprangen" },
+          }
+        },
+        {
+          infinitive: "werfen", en: "to throw", praeteritum: "warf", partizip2: "geworfen",
+          konjugation: {
+            praesens:    { "ich": "werfe", "du": "wirfst", "er/sie/es": "wirft", "wir": "werfen", "ihr": "werft", "sie/Sie": "werfen" },
+            praeteritum: { "ich": "warf",  "du": "warfst", "er/sie/es": "warf",  "wir": "warfen", "ihr": "warft", "sie/Sie": "warfen" },
+          }
+        },
+        {
+          infinitive: "fangen", en: "to catch", praeteritum: "fing", partizip2: "gefangen",
+          konjugation: {
+            praesens:    { "ich": "fange", "du": "fängst", "er/sie/es": "fängt", "wir": "fangen", "ihr": "fangt", "sie/Sie": "fangen" },
+            praeteritum: { "ich": "fing",  "du": "fingst", "er/sie/es": "fing",  "wir": "fingen", "ihr": "fingt", "sie/Sie": "fingen" },
+          }
+        },
+        {
+          infinitive: "schlagen", en: "to hit / beat", praeteritum: "schlug", partizip2: "geschlagen",
+          konjugation: {
+            praesens:    { "ich": "schlage", "du": "schlägst", "er/sie/es": "schlägt", "wir": "schlagen", "ihr": "schlagt", "sie/Sie": "schlagen" },
+            praeteritum: { "ich": "schlug",  "du": "schlugst", "er/sie/es": "schlug",  "wir": "schlugen", "ihr": "schlugt", "sie/Sie": "schlugen" },
+          }
+        },
+        {
+          infinitive: "gewinnen", en: "to win", praeteritum: "gewann", partizip2: "gewonnen",
+          konjugation: {
+            praesens:    { "ich": "gewinne", "du": "gewinnst", "er/sie/es": "gewinnt", "wir": "gewinnen", "ihr": "gewinnt",  "sie/Sie": "gewinnen" },
+            praeteritum: { "ich": "gewann",  "du": "gewannst", "er/sie/es": "gewann",  "wir": "gewannen", "ihr": "gewannt",  "sie/Sie": "gewannen" },
+          }
+        },
+        {
+          infinitive: "verlieren", en: "to lose", praeteritum: "verlor", partizip2: "verloren",
+          konjugation: {
+            praesens:    { "ich": "verliere", "du": "verlierst", "er/sie/es": "verliert", "wir": "verlieren", "ihr": "verliert", "sie/Sie": "verlieren" },
+            praeteritum: { "ich": "verlor",   "du": "verlorst",  "er/sie/es": "verlor",   "wir": "verloren",  "ihr": "verlort",  "sie/Sie": "verloren"  },
+          }
+        },
+        {
+          infinitive: "tragen", en: "to carry / wear", praeteritum: "trug", partizip2: "getragen",
+          konjugation: {
+            praesens:    { "ich": "trage", "du": "trägst", "er/sie/es": "trägt", "wir": "tragen", "ihr": "tragt", "sie/Sie": "tragen" },
+            praeteritum: { "ich": "trug",  "du": "trugst", "er/sie/es": "trug",  "wir": "trugen", "ihr": "trugt", "sie/Sie": "trugen" },
+          }
+        },
+        {
+          infinitive: "treten", en: "to step / kick", praeteritum: "trat", partizip2: "getreten",
+          konjugation: {
+            praesens:    { "ich": "trete",  "du": "trittst",  "er/sie/es": "tritt",  "wir": "treten", "ihr": "tretet",  "sie/Sie": "treten" },
+            praeteritum: { "ich": "trat",   "du": "tratst",   "er/sie/es": "trat",   "wir": "traten", "ihr": "tratet",  "sie/Sie": "traten" },
+          }
+        },
+      ]
+    },
+    {
+      id: "handlungen",
+      name: "Handlungen (Actions)",
+      verbs: [
+        {
+          infinitive: "waschen", en: "to wash", praeteritum: "wusch", partizip2: "gewaschen",
+          konjugation: {
+            praesens:    { "ich": "wasche", "du": "wäschst",  "er/sie/es": "wäscht",  "wir": "waschen", "ihr": "wascht",  "sie/Sie": "waschen" },
+            praeteritum: { "ich": "wusch",  "du": "wuschest", "er/sie/es": "wusch",   "wir": "wuschen", "ihr": "wuscht",  "sie/Sie": "wuschen" },
+          }
+        },
+        {
+          infinitive: "schneiden", en: "to cut", praeteritum: "schnitt", partizip2: "geschnitten",
+          konjugation: {
+            praesens:    { "ich": "schneide",  "du": "schneidest",  "er/sie/es": "schneidet", "wir": "schneiden", "ihr": "schneidet",  "sie/Sie": "schneiden" },
+            praeteritum: { "ich": "schnitt",   "du": "schnittst",   "er/sie/es": "schnitt",   "wir": "schnitten", "ihr": "schnittet",  "sie/Sie": "schnitten" },
+          }
+        },
+        {
+          infinitive: "greifen", en: "to grab / reach", praeteritum: "griff", partizip2: "gegriffen",
+          konjugation: {
+            praesens:    { "ich": "greife", "du": "greifst", "er/sie/es": "greift", "wir": "greifen", "ihr": "greift", "sie/Sie": "greifen" },
+            praeteritum: { "ich": "griff",  "du": "griffst", "er/sie/es": "griff",  "wir": "griffen", "ihr": "grifft", "sie/Sie": "griffen" },
+          }
+        },
+        {
+          infinitive: "halten", en: "to hold / stop", praeteritum: "hielt", partizip2: "gehalten",
+          konjugation: {
+            praesens:    { "ich": "halte",  "du": "hältst",   "er/sie/es": "hält",   "wir": "halten",  "ihr": "haltet",  "sie/Sie": "halten"  },
+            praeteritum: { "ich": "hielt",  "du": "hieltest", "er/sie/es": "hielt",  "wir": "hielten", "ihr": "hieltet", "sie/Sie": "hielten" },
+          }
+        },
+        {
+          infinitive: "lassen", en: "to let / leave", praeteritum: "ließ", partizip2: "gelassen",
+          konjugation: {
+            praesens:    { "ich": "lasse",  "du": "lässt",    "er/sie/es": "lässt",  "wir": "lassen",  "ihr": "lasst",   "sie/Sie": "lassen"  },
+            praeteritum: { "ich": "ließ",   "du": "ließest",  "er/sie/es": "ließ",   "wir": "ließen",  "ihr": "ließt",   "sie/Sie": "ließen"  },
+          }
+        },
+        {
+          infinitive: "brechen", en: "to break", praeteritum: "brach", partizip2: "gebrochen",
+          konjugation: {
+            praesens:    { "ich": "breche", "du": "brichst", "er/sie/es": "bricht", "wir": "brechen", "ihr": "brecht", "sie/Sie": "brechen" },
+            praeteritum: { "ich": "brach",  "du": "brachst", "er/sie/es": "brach",  "wir": "brachen", "ihr": "bracht", "sie/Sie": "brachen" },
+          }
+        },
+        {
+          infinitive: "heben", en: "to lift / raise", praeteritum: "hob", partizip2: "gehoben",
+          konjugation: {
+            praesens:    { "ich": "hebe", "du": "hebst", "er/sie/es": "hebt", "wir": "heben", "ihr": "hebt", "sie/Sie": "heben" },
+            praeteritum: { "ich": "hob",  "du": "hobst", "er/sie/es": "hob",  "wir": "hoben", "ihr": "hobt", "sie/Sie": "hoben" },
+          }
+        },
+        {
+          infinitive: "treffen", en: "to meet / hit", praeteritum: "traf", partizip2: "getroffen",
+          konjugation: {
+            praesens:    { "ich": "treffe", "du": "triffst", "er/sie/es": "trifft", "wir": "treffen", "ihr": "trefft", "sie/Sie": "treffen" },
+            praeteritum: { "ich": "traf",   "du": "trafst",  "er/sie/es": "traf",   "wir": "trafen",  "ihr": "traft",  "sie/Sie": "trafen"  },
+          }
+        },
+      ]
+    },
+    {
+      id: "natur",
+      name: "Natur & Elemente (Nature)",
+      verbs: [
+        {
+          infinitive: "wachsen", en: "to grow", praeteritum: "wuchs", partizip2: "gewachsen",
+          konjugation: {
+            praesens:    { "ich": "wachse", "du": "wächst",   "er/sie/es": "wächst",  "wir": "wachsen", "ihr": "wachst",  "sie/Sie": "wachsen" },
+            praeteritum: { "ich": "wuchs",  "du": "wuchsest", "er/sie/es": "wuchs",   "wir": "wuchsen", "ihr": "wuchst",  "sie/Sie": "wuchsen" },
+          }
+        },
+        {
+          infinitive: "scheinen", en: "to shine / seem", praeteritum: "schien", partizip2: "geschienen",
+          konjugation: {
+            praesens:    { "ich": "scheine", "du": "scheinst", "er/sie/es": "scheint", "wir": "scheinen", "ihr": "scheint", "sie/Sie": "scheinen" },
+            praeteritum: { "ich": "schien",  "du": "schienst", "er/sie/es": "schien",  "wir": "schienen", "ihr": "schient", "sie/Sie": "schienen" },
+          }
+        },
+        {
+          infinitive: "brennen", en: "to burn", praeteritum: "brannte", partizip2: "gebrannt",
+          konjugation: {
+            praesens:    { "ich": "brenne",  "du": "brennst",   "er/sie/es": "brennt",  "wir": "brennen",  "ihr": "brennt",   "sie/Sie": "brennen"  },
+            praeteritum: { "ich": "brannte", "du": "branntest", "er/sie/es": "brannte", "wir": "brannten", "ihr": "branntet", "sie/Sie": "brannten" },
+          }
+        },
+        {
+          infinitive: "frieren", en: "to freeze / feel cold", praeteritum: "fror", partizip2: "gefroren",
+          konjugation: {
+            praesens:    { "ich": "friere", "du": "frierst", "er/sie/es": "friert", "wir": "frieren", "ihr": "friert", "sie/Sie": "frieren" },
+            praeteritum: { "ich": "fror",   "du": "frorst",  "er/sie/es": "fror",   "wir": "froren",  "ihr": "frort",  "sie/Sie": "froren"  },
+          }
+        },
+        {
+          infinitive: "fließen", en: "to flow", praeteritum: "floss", partizip2: "geflossen",
+          konjugation: {
+            praesens:    { "ich": "fließe", "du": "fließt",   "er/sie/es": "fließt",  "wir": "fließen", "ihr": "fließt",  "sie/Sie": "fließen" },
+            praeteritum: { "ich": "floss",  "du": "flossest", "er/sie/es": "floss",   "wir": "flossen", "ihr": "flosst",  "sie/Sie": "flossen" },
+          }
+        },
+        {
+          infinitive: "sinken", en: "to sink", praeteritum: "sank", partizip2: "gesunken",
+          konjugation: {
+            praesens:    { "ich": "sinke", "du": "sinkst", "er/sie/es": "sinkt", "wir": "sinken", "ihr": "sinkt", "sie/Sie": "sinken" },
+            praeteritum: { "ich": "sank",  "du": "sankst", "er/sie/es": "sank",  "wir": "sanken", "ihr": "sankt", "sie/Sie": "sanken" },
+          }
+        },
+        {
+          infinitive: "biegen", en: "to bend", praeteritum: "bog", partizip2: "gebogen",
+          konjugation: {
+            praesens:    { "ich": "biege", "du": "biegst", "er/sie/es": "biegt", "wir": "biegen", "ihr": "biegt", "sie/Sie": "biegen" },
+            praeteritum: { "ich": "bog",   "du": "bogst",  "er/sie/es": "bog",   "wir": "bogen",  "ihr": "bogt",  "sie/Sie": "bogen"  },
+          }
+        },
+        {
+          infinitive: "stechen", en: "to sting / pierce", praeteritum: "stach", partizip2: "gestochen",
+          konjugation: {
+            praesens:    { "ich": "steche", "du": "stichst", "er/sie/es": "sticht", "wir": "stechen", "ihr": "stecht", "sie/Sie": "stechen" },
+            praeteritum: { "ich": "stach",  "du": "stachst", "er/sie/es": "stach",  "wir": "stachen", "ihr": "stacht", "sie/Sie": "stachen" },
+          }
+        },
+      ]
+    },
   ]
 };
