@@ -32,7 +32,7 @@ Each category is an object in the `categories` array:
 }
 ```
 
-Add a new category by appending a new object to the array. The game randomly selects up to **8 pairs** per round if the category has more.
+Add a new category by appending a new object to the array. The game randomly selects up to **6 pairs** per round if the category has more.
 
 ### Verbs — `data/verbs.js`
 
@@ -45,17 +45,22 @@ Add a new category by appending a new object to the array. The game randomly sel
       infinitive:   "gehen",
       en:           "to go",
       praeteritum:  "ging",
-      partizip2:    "gegangen"
-    },
-    // ...
+      partizip2:    "gegangen",
+      konjugation: {
+        praesens:    { "ich": "gehe", "du": "gehst", "er/sie/es": "geht", "wir": "gehen", "ihr": "geht", "sie/Sie": "gehen" },
+        praeteritum: { "ich": "ging", "du": "gingst", "er/sie/es": "ging", "wir": "gingen", "ihr": "gingt", "sie/Sie": "gingen" }
+      }
+    }
   ]
 }
 ```
 
-Each verb supports three game modes (selectable before each round):
+Each verb supports three form-matching modes and two conjugation drills:
 - **Infinitiv ↔ English** — `gehen ↔ to go`
 - **Infinitiv ↔ Präteritum** — `gehen ↔ ging`
 - **Infinitiv ↔ Partizip II** — `gehen ↔ gegangen`
+- **Konjugation Präsens** — match pronouns to present-tense forms
+- **Konjugation Präteritum** — match pronouns to past-tense forms
 
 ---
 
@@ -67,14 +72,14 @@ style.css         all styles (dark mode included)
 game.js           game logic
 data/
   words.js        vocabulary categories
-  verbs.js        verb categories
+  verbs.js        verb categories + conjugation tables
 ```
 
 ---
 
 ## Game rules
 
-- Tap a card to flip it
-- Tap a second card — if the two cards are a matching pair they stay revealed (green)
-- If not, they flip back after ~1 second
+- Tap a card on the left, then a matching card on the right
+- Correct pair: both cards turn green
+- Wrong pair: both cards flash red and reset
 - Match all pairs to complete the round
