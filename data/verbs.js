@@ -592,5 +592,232 @@ const VERBS_DATA = {
         },
       ]
     },
+    {
+      id: "b1_wichtige",
+      name: "B1 Wichtige Verben",
+      verbs: [
+        {
+          infinitive: "tun", en: "to do", praeteritum: "tat", partizip2: "getan",
+          konjugation: {
+            praesens:    { "ich": "tue",   "du": "tust",   "er/sie/es": "tut",   "wir": "tun",    "ihr": "tut",    "sie/Sie": "tun"    },
+            praeteritum: { "ich": "tat",   "du": "tatst",  "er/sie/es": "tat",   "wir": "taten",  "ihr": "tatet",  "sie/Sie": "taten"  },
+          }
+        },
+        {
+          infinitive: "bekommen", en: "to receive / get", praeteritum: "bekam", partizip2: "bekommen",
+          konjugation: {
+            praesens:    { "ich": "bekomme",  "du": "bekommst",  "er/sie/es": "bekommt",  "wir": "bekommen",  "ihr": "bekommt",  "sie/Sie": "bekommen"  },
+            praeteritum: { "ich": "bekam",    "du": "bekamst",   "er/sie/es": "bekam",    "wir": "bekamen",   "ihr": "bekamt",   "sie/Sie": "bekamen"   },
+          }
+        },
+        {
+          infinitive: "gefallen", en: "to please / like", praeteritum: "gefiel", partizip2: "gefallen",
+          konjugation: {
+            praesens:    { "ich": "gefalle",  "du": "gefällst",  "er/sie/es": "gefällt",  "wir": "gefallen",  "ihr": "gefallt",  "sie/Sie": "gefallen"  },
+            praeteritum: { "ich": "gefiel",   "du": "gefielst",  "er/sie/es": "gefiel",   "wir": "gefielen",  "ihr": "gefielt",  "sie/Sie": "gefielen"  },
+          }
+        },
+        {
+          infinitive: "erhalten", en: "to receive / maintain", praeteritum: "erhielt", partizip2: "erhalten",
+          konjugation: {
+            praesens:    { "ich": "erhalte",  "du": "erhältst",  "er/sie/es": "erhält",   "wir": "erhalten",  "ihr": "erhaltet", "sie/Sie": "erhalten"  },
+            praeteritum: { "ich": "erhielt",  "du": "erhieltst", "er/sie/es": "erhielt",  "wir": "erhielten", "ihr": "erhieltet","sie/Sie": "erhielten" },
+          }
+        },
+        {
+          infinitive: "erfahren", en: "to find out / experience", praeteritum: "erfuhr", partizip2: "erfahren",
+          konjugation: {
+            praesens:    { "ich": "erfahre",  "du": "erfährst",  "er/sie/es": "erfährt",  "wir": "erfahren",  "ihr": "erfahrt",  "sie/Sie": "erfahren"  },
+            praeteritum: { "ich": "erfuhr",   "du": "erfuhrst",  "er/sie/es": "erfuhr",   "wir": "erfuhren",  "ihr": "erfuhrt",  "sie/Sie": "erfuhren"  },
+          }
+        },
+        {
+          infinitive: "entscheiden", en: "to decide", praeteritum: "entschied", partizip2: "entschieden",
+          konjugation: {
+            praesens:    { "ich": "entscheide",  "du": "entscheidest",  "er/sie/es": "entscheidet",  "wir": "entscheiden",  "ihr": "entscheidet",  "sie/Sie": "entscheiden"  },
+            praeteritum: { "ich": "entschied",   "du": "entschiedst",   "er/sie/es": "entschied",    "wir": "entschieden",  "ihr": "entschiedet",  "sie/Sie": "entschieden"  },
+          }
+        },
+        {
+          infinitive: "verlassen", en: "to leave / abandon", praeteritum: "verließ", partizip2: "verlassen",
+          konjugation: {
+            praesens:    { "ich": "verlasse",  "du": "verlässt",  "er/sie/es": "verlässt",  "wir": "verlassen",  "ihr": "verlasst",  "sie/Sie": "verlassen"  },
+            praeteritum: { "ich": "verließ",   "du": "verließt",  "er/sie/es": "verließ",   "wir": "verließen",  "ihr": "verließt",  "sie/Sie": "verließen"  },
+          }
+        },
+        {
+          infinitive: "verschwinden", en: "to disappear", praeteritum: "verschwand", partizip2: "verschwunden",
+          konjugation: {
+            praesens:    { "ich": "verschwinde",  "du": "verschwindest",  "er/sie/es": "verschwindet",  "wir": "verschwinden",  "ihr": "verschwindet",  "sie/Sie": "verschwinden"  },
+            praeteritum: { "ich": "verschwand",   "du": "verschwandst",   "er/sie/es": "verschwand",    "wir": "verschwanden",  "ihr": "verschwandet",  "sie/Sie": "verschwanden"  },
+          }
+        },
+        {
+          infinitive: "erscheinen", en: "to appear / seem", praeteritum: "erschien", partizip2: "erschienen",
+          konjugation: {
+            praesens:    { "ich": "erscheine",  "du": "erscheinst",  "er/sie/es": "erscheint",  "wir": "erscheinen",  "ihr": "erscheint",  "sie/Sie": "erscheinen"  },
+            praeteritum: { "ich": "erschien",   "du": "erschienst",  "er/sie/es": "erschien",   "wir": "erschienen",  "ihr": "erschient",  "sie/Sie": "erschienen"  },
+          }
+        },
+        {
+          infinitive: "besitzen", en: "to own / possess", praeteritum: "besaß", partizip2: "besessen",
+          konjugation: {
+            praesens:    { "ich": "besitze",  "du": "besitzt",  "er/sie/es": "besitzt",  "wir": "besitzen",  "ihr": "besitzt",  "sie/Sie": "besitzen"  },
+            praeteritum: { "ich": "besaß",    "du": "besaßt",   "er/sie/es": "besaß",    "wir": "besaßen",   "ihr": "besaßt",   "sie/Sie": "besaßen"   },
+          }
+        },
+        {
+          infinitive: "verbringen", en: "to spend (time)", praeteritum: "verbrachte", partizip2: "verbracht",
+          konjugation: {
+            praesens:    { "ich": "verbringe",  "du": "verbringst",  "er/sie/es": "verbringt",  "wir": "verbringen",  "ihr": "verbringt",  "sie/Sie": "verbringen"  },
+            praeteritum: { "ich": "verbrachte", "du": "verbrachtest","er/sie/es": "verbrachte", "wir": "verbrachten", "ihr": "verbrachtet","sie/Sie": "verbrachten" },
+          }
+        },
+        {
+          infinitive: "verbieten", en: "to forbid / ban", praeteritum: "verbot", partizip2: "verboten",
+          konjugation: {
+            praesens:    { "ich": "verbiete",  "du": "verbietest",  "er/sie/es": "verbietet",  "wir": "verbieten",  "ihr": "verbietet",  "sie/Sie": "verbieten"  },
+            praeteritum: { "ich": "verbot",    "du": "verbotest",   "er/sie/es": "verbot",     "wir": "verboten",   "ihr": "verbotet",   "sie/Sie": "verboten"   },
+          }
+        },
+        {
+          infinitive: "geschehen", en: "to happen", praeteritum: "geschah", partizip2: "geschehen",
+        },
+        {
+          infinitive: "gelingen", en: "to succeed", praeteritum: "gelang", partizip2: "gelungen",
+        },
+      ]
+    },
+    {
+      id: "trennbare1",
+      name: "Trennbare Verben I",
+      verbs: [
+        {
+          infinitive: "anfangen", en: "to begin / start", praeteritum: "fing an", partizip2: "angefangen",
+          konjugation: {
+            praesens:    { "ich": "fange an",  "du": "fängst an",  "er/sie/es": "fängt an",  "wir": "fangen an",  "ihr": "fangt an",  "sie/Sie": "fangen an"  },
+            praeteritum: { "ich": "fing an",   "du": "fingst an",  "er/sie/es": "fing an",   "wir": "fingen an",  "ihr": "fingt an",  "sie/Sie": "fingen an"  },
+          }
+        },
+        {
+          infinitive: "aufstehen", en: "to get up / stand up", praeteritum: "stand auf", partizip2: "aufgestanden",
+          konjugation: {
+            praesens:    { "ich": "stehe auf",  "du": "stehst auf",  "er/sie/es": "steht auf",  "wir": "stehen auf",  "ihr": "steht auf",  "sie/Sie": "stehen auf"  },
+            praeteritum: { "ich": "stand auf",  "du": "standst auf", "er/sie/es": "stand auf",  "wir": "standen auf", "ihr": "standet auf","sie/Sie": "standen auf" },
+          }
+        },
+        {
+          infinitive: "anrufen", en: "to call (phone)", praeteritum: "rief an", partizip2: "angerufen",
+          konjugation: {
+            praesens:    { "ich": "rufe an",  "du": "rufst an",  "er/sie/es": "ruft an",  "wir": "rufen an",  "ihr": "ruft an",  "sie/Sie": "rufen an"  },
+            praeteritum: { "ich": "rief an",  "du": "riefst an", "er/sie/es": "rief an",  "wir": "riefen an", "ihr": "rieft an", "sie/Sie": "riefen an" },
+          }
+        },
+        {
+          infinitive: "aussehen", en: "to look / appear", praeteritum: "sah aus", partizip2: "ausgesehen",
+          konjugation: {
+            praesens:    { "ich": "sehe aus",  "du": "siehst aus",  "er/sie/es": "sieht aus",  "wir": "sehen aus",  "ihr": "seht aus",  "sie/Sie": "sehen aus"  },
+            praeteritum: { "ich": "sah aus",   "du": "sahst aus",   "er/sie/es": "sah aus",    "wir": "sahen aus",  "ihr": "saht aus",  "sie/Sie": "sahen aus"  },
+          }
+        },
+        {
+          infinitive: "einschlafen", en: "to fall asleep", praeteritum: "schlief ein", partizip2: "eingeschlafen",
+          konjugation: {
+            praesens:    { "ich": "schlafe ein",  "du": "schläfst ein",  "er/sie/es": "schläft ein",  "wir": "schlafen ein",  "ihr": "schlaft ein",  "sie/Sie": "schlafen ein"  },
+            praeteritum: { "ich": "schlief ein",  "du": "schliefst ein", "er/sie/es": "schlief ein",  "wir": "schliefen ein", "ihr": "schlieft ein", "sie/Sie": "schliefen ein" },
+          }
+        },
+        {
+          infinitive: "ausgeben", en: "to spend (money)", praeteritum: "gab aus", partizip2: "ausgegeben",
+          konjugation: {
+            praesens:    { "ich": "gebe aus",  "du": "gibst aus",  "er/sie/es": "gibt aus",  "wir": "geben aus",  "ihr": "gebt aus",  "sie/Sie": "geben aus"  },
+            praeteritum: { "ich": "gab aus",   "du": "gabst aus",  "er/sie/es": "gab aus",   "wir": "gaben aus",  "ihr": "gabt aus",  "sie/Sie": "gaben aus"  },
+          }
+        },
+        {
+          infinitive: "umziehen", en: "to move (home) / change clothes", praeteritum: "zog um", partizip2: "umgezogen",
+          konjugation: {
+            praesens:    { "ich": "ziehe um",  "du": "ziehst um",  "er/sie/es": "zieht um",  "wir": "ziehen um",  "ihr": "zieht um",  "sie/Sie": "ziehen um"  },
+            praeteritum: { "ich": "zog um",    "du": "zogst um",   "er/sie/es": "zog um",    "wir": "zogen um",   "ihr": "zogt um",   "sie/Sie": "zogen um"   },
+          }
+        },
+        {
+          infinitive: "abfahren", en: "to depart / leave (vehicle)", praeteritum: "fuhr ab", partizip2: "abgefahren",
+          konjugation: {
+            praesens:    { "ich": "fahre ab",  "du": "fährst ab",  "er/sie/es": "fährt ab",  "wir": "fahren ab",  "ihr": "fahrt ab",  "sie/Sie": "fahren ab"  },
+            praeteritum: { "ich": "fuhr ab",   "du": "fuhrst ab",  "er/sie/es": "fuhr ab",   "wir": "fuhren ab",  "ihr": "fuhrt ab",  "sie/Sie": "fuhren ab"  },
+          }
+        },
+      ]
+    },
+    {
+      id: "trennbare2",
+      name: "Trennbare Verben II",
+      verbs: [
+        {
+          infinitive: "ankommen", en: "to arrive", praeteritum: "kam an", partizip2: "angekommen",
+          konjugation: {
+            praesens:    { "ich": "komme an",  "du": "kommst an",  "er/sie/es": "kommt an",  "wir": "kommen an",  "ihr": "kommt an",  "sie/Sie": "kommen an"  },
+            praeteritum: { "ich": "kam an",    "du": "kamst an",   "er/sie/es": "kam an",    "wir": "kamen an",   "ihr": "kamt an",   "sie/Sie": "kamen an"   },
+          }
+        },
+        {
+          infinitive: "stattfinden", en: "to take place", praeteritum: "fand statt", partizip2: "stattgefunden",
+          konjugation: {
+            praesens:    { "ich": "finde statt",  "du": "findest statt",  "er/sie/es": "findet statt",  "wir": "finden statt",  "ihr": "findet statt",  "sie/Sie": "finden statt"  },
+            praeteritum: { "ich": "fand statt",   "du": "fandst statt",   "er/sie/es": "fand statt",    "wir": "fanden statt",  "ihr": "fandet statt",  "sie/Sie": "fanden statt"  },
+          }
+        },
+        {
+          infinitive: "teilnehmen", en: "to participate", praeteritum: "nahm teil", partizip2: "teilgenommen",
+          konjugation: {
+            praesens:    { "ich": "nehme teil",  "du": "nimmst teil",  "er/sie/es": "nimmt teil",  "wir": "nehmen teil",  "ihr": "nehmt teil",  "sie/Sie": "nehmen teil"  },
+            praeteritum: { "ich": "nahm teil",   "du": "nahmst teil",  "er/sie/es": "nahm teil",   "wir": "nahmen teil",  "ihr": "nahmt teil",  "sie/Sie": "nahmen teil"  },
+          }
+        },
+        {
+          infinitive: "mitnehmen", en: "to take along", praeteritum: "nahm mit", partizip2: "mitgenommen",
+          konjugation: {
+            praesens:    { "ich": "nehme mit",  "du": "nimmst mit",  "er/sie/es": "nimmt mit",  "wir": "nehmen mit",  "ihr": "nehmt mit",  "sie/Sie": "nehmen mit"  },
+            praeteritum: { "ich": "nahm mit",   "du": "nahmst mit",  "er/sie/es": "nahm mit",   "wir": "nahmen mit",  "ihr": "nahmt mit",  "sie/Sie": "nahmen mit"  },
+          }
+        },
+        {
+          infinitive: "vorkommen", en: "to occur / happen / seem", praeteritum: "kam vor", partizip2: "vorgekommen",
+          konjugation: {
+            praesens:    { "ich": "komme vor",  "du": "kommst vor",  "er/sie/es": "kommt vor",  "wir": "kommen vor",  "ihr": "kommt vor",  "sie/Sie": "kommen vor"  },
+            praeteritum: { "ich": "kam vor",    "du": "kamst vor",   "er/sie/es": "kam vor",    "wir": "kamen vor",   "ihr": "kamt vor",   "sie/Sie": "kamen vor"   },
+          }
+        },
+        {
+          infinitive: "anbieten", en: "to offer", praeteritum: "bot an", partizip2: "angeboten",
+          konjugation: {
+            praesens:    { "ich": "biete an",  "du": "bietest an",  "er/sie/es": "bietet an",  "wir": "bieten an",  "ihr": "bietet an",  "sie/Sie": "bieten an"  },
+            praeteritum: { "ich": "bot an",    "du": "botst an",    "er/sie/es": "bot an",     "wir": "boten an",   "ihr": "botet an",   "sie/Sie": "boten an"   },
+          }
+        },
+        {
+          infinitive: "aufnehmen", en: "to record / pick up / absorb", praeteritum: "nahm auf", partizip2: "aufgenommen",
+          konjugation: {
+            praesens:    { "ich": "nehme auf",  "du": "nimmst auf",  "er/sie/es": "nimmt auf",  "wir": "nehmen auf",  "ihr": "nehmt auf",  "sie/Sie": "nehmen auf"  },
+            praeteritum: { "ich": "nahm auf",   "du": "nahmst auf",  "er/sie/es": "nahm auf",   "wir": "nahmen auf",  "ihr": "nahmt auf",  "sie/Sie": "nahmen auf"  },
+          }
+        },
+        {
+          infinitive: "einladen", en: "to invite", praeteritum: "lud ein", partizip2: "eingeladen",
+          konjugation: {
+            praesens:    { "ich": "lade ein",  "du": "lädst ein",  "er/sie/es": "lädt ein",  "wir": "laden ein",  "ihr": "ladet ein",  "sie/Sie": "laden ein"  },
+            praeteritum: { "ich": "lud ein",   "du": "ludst ein",  "er/sie/es": "lud ein",   "wir": "luden ein",  "ihr": "ludet ein",  "sie/Sie": "luden ein"  },
+          }
+        },
+        {
+          infinitive: "vorhaben", en: "to plan / intend", praeteritum: "hatte vor", partizip2: "vorgehabt",
+          konjugation: {
+            praesens:    { "ich": "habe vor",   "du": "hast vor",   "er/sie/es": "hat vor",   "wir": "haben vor",   "ihr": "habt vor",   "sie/Sie": "haben vor"   },
+            praeteritum: { "ich": "hatte vor",  "du": "hattest vor","er/sie/es": "hatte vor", "wir": "hatten vor",  "ihr": "hattet vor", "sie/Sie": "hatten vor"  },
+          }
+        },
+      ]
+    },
   ]
 };
