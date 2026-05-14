@@ -270,6 +270,13 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.03em;
 }
 
+.conj-progress {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin-left: 4px;
+}
+
 /* ---- TWO-COLUMN CARD LAYOUT ---- */
 .game-columns {
   display: grid;

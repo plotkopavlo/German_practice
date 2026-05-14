@@ -35,6 +35,9 @@ let S = {
   startTime: 0,
   endTime: 0,
   locked: false,
+  conjAllVerbs: [],  // sequential all-verbs mode: list of eligible verb objects
+  conjAllIdx: 0,     // current verb index
+  conjAllMoves: 0,   // accumulated moves across all verbs
 };
 
 // ---- Rendering ----
@@ -176,12 +179,11 @@ function tmplGame() {
   const isConj = S.mode === 'konjugation';
 
   const tLabel = TENSE_LABELS[S.conjTense] || '';
+  const seqProgress = S.conjAllVerbs.length > 0
+    ? ` <span class="conj-progress">${S.conjAllIdx + 1} / ${S.conjAllVerbs.length}</span>` : '';
   const instruction = isConj
-    ? (S.conjVerb
-      ? `<span class="conj-verb-name">${esc(S.conjVerb.infinitive)}</span>
-         <span class="conj-tense-tag">${tLabel}</span>`
-      : `<span class="conj-verb-name">${esc(S.category.name)}</span>
-         <span class="conj-tense-tag">${tLabel}</span>`)
+    ? `<span class="conj-verb-name">${esc(S.conjVerb.infinitive)}</span>
+       <span class="conj-tense-tag">${tLabel}</span>${seqProgress}`
     : 'Tap the matching pairs';
 
   const colHTML = (cards, side) => cards.map((c, i) => `
@@ -215,10 +217,16 @@ function tmplComplete() {
       <div class="complete-card">
         <div class="trophy">🏆</div>
         <h2>Ausgezeichnet!</h2>
-        <p class="tagline">${isConj ? (S.conjVerb ? esc(S.conjVerb.infinitive) + ' — all forms matched!' : 'Alle Verben — done!') : 'All pairs matched!'}</p>
+        <p class="tagline">${
+          S.conjAllVerbs.length > 0
+            ? `All ${S.conjAllVerbs.length} verbs done!`
+            : isConj
+              ? esc(S.conjVerb.infinitive) + ' — all forms matched!'
+              : 'All pairs matched!'
+        }</p>
         <div class="result-stats">
           <div class="result-stat">
-            <span class="val">${S.moves}</span>
+            <span class="val">${S.conjAllVerbs.length > 0 ? S.conjAllMoves : S.moves}</span>
             <span class="lbl">Moves</span>
           </div>
           <div class="result-stat">
@@ -229,7 +237,7 @@ function tmplComplete() {
         <div class="complete-actions">
           <button class="action-btn primary" onclick="startGame()">Play Again</button>
           ${isConj
-            ? `<button class="action-btn secondary" onclick="nav('verbselect')">${S.conjVerb ? 'Other Verb' : 'Verb List'}</button>`
+            ? `<button class="action-btn secondary" onclick="nav('verbselect')">${S.conjAllVerbs.length > 0 ? 'Verb List' : 'Other Verb'}</button>`
             : S.type === 'verbs'
               ? `<button class="action-btn secondary" onclick="nav('mode')">← Modes</button>`
               : `<button class="action-btn secondary" onclick="nav('category','words')">← Categories</button>`}
@@ -244,6 +252,7 @@ function tmplComplete() {
 function nav(screen, type) {
   if (screen === 'home') {
     S.type = null; S.mode = null; S.conjTense = null; S.conjVerb = null;
+    S.conjAllVerbs = []; S.conjAllIdx = 0; S.conjAllMoves = 0;
   }
   S.screen = screen;
   if (type) S.type = type;
@@ -285,7 +294,15 @@ function startGame(mode) {
   if (mode) S.mode = mode;
 
   if (S.mode === 'konjugation') {
-    startConjGame(S.conjVerb ? S.conjVerb.infinitive : null);
+    if (S.conjAllVerbs.length > 0) {
+      // Restart sequential all-verbs mode from the beginning
+      S.conjAllIdx = 0;
+      S.conjAllMoves = 0;
+      S.conjVerb = S.conjAllVerbs[0];
+      initCards(conjPairsForVerb(S.conjVerb));
+    } else {
+      startConjGame(S.conjVerb.infinitive);
+    }
     return;
   }
 
@@ -296,15 +313,28 @@ function startGame(mode) {
 
 function startConjGame(infinitive) {
   if (!infinitive) {
-    S.conjVerb = null;
-    initCards(buildAllConjPairs(S.conjTense));
+    // Sequential mode: one verb at a time through the whole category
+    const eligible = S.category.verbs.filter(v =>
+      S.conjTense === 'perfekt' ? v.partizip2 : (v.konjugation && v.konjugation[S.conjTense])
+    );
+    S.conjAllVerbs = eligible;
+    S.conjAllIdx = 0;
+    S.conjAllMoves = 0;
+    S.conjVerb = eligible[0];
+    initCards(conjPairsForVerb(S.conjVerb));
     return;
   }
+  S.conjAllVerbs = [];
+  S.conjAllIdx = 0;
+  S.conjAllMoves = 0;
   S.conjVerb = S.category.verbs.find(v => v.infinitive === infinitive);
-  const pairs = S.conjTense === 'perfekt'
-    ? buildPerfektPairs(S.conjVerb)
-    : buildConjPairs(S.conjVerb.konjugation[S.conjTense]);
-  initCards(pairs);
+  initCards(conjPairsForVerb(S.conjVerb));
+}
+
+function conjPairsForVerb(verb) {
+  return S.conjTense === 'perfekt'
+    ? buildPerfektPairs(verb)
+    : buildConjPairs(verb.konjugation[S.conjTense]);
 }
 
 function initCards(pairs) {
@@ -347,19 +377,6 @@ function buildPerfektPairs(verb) {
   return Object.entries(formMap).map(([form, prons]) => ({ a: prons.join(' / '), b: form }));
 }
 
-function buildAllConjPairs(tense) {
-  const verbs = S.category.verbs.filter(v =>
-    tense === 'perfekt' ? v.partizip2 : (v.konjugation && v.konjugation[tense])
-  );
-  const allPairs = [];
-  verbs.forEach(v => {
-    const pairs = tense === 'perfekt'
-      ? buildPerfektPairs(v)
-      : buildConjPairs(v.konjugation[tense]);
-    pairs.forEach(p => allPairs.push({ a: `${p.a} — ${v.infinitive}`, b: p.b }));
-  });
-  return shuffle(allPairs).slice(0, CONFIG.PAIRS_PER_GAME);
-}
 
 function buildConjPairs(konjugation) {
   // Group pronouns that share the same form to avoid duplicate right-side cards.
@@ -425,7 +442,18 @@ function checkMatch() {
 
     if (S.matchedCount === S.leftCards.length) {
       S.endTime = Date.now();
-      setTimeout(() => { S.screen = 'complete'; render(); }, 700);
+      if (S.conjAllVerbs.length > 0 && S.conjAllIdx < S.conjAllVerbs.length - 1) {
+        // Advance to next verb in sequence
+        S.conjAllMoves += S.moves;
+        setTimeout(() => {
+          S.conjAllIdx++;
+          S.conjVerb = S.conjAllVerbs[S.conjAllIdx];
+          initCards(conjPairsForVerb(S.conjVerb));
+        }, 900);
+      } else {
+        if (S.conjAllVerbs.length > 0) S.conjAllMoves += S.moves;
+        setTimeout(() => { S.screen = 'complete'; render(); }, 700);
+      }
     }
   } else {
     S.locked = true;
