@@ -227,9 +227,13 @@ function tmplComplete() {
           </div>
         </div>
         <div class="complete-actions">
-          <button class="action-btn primary"   onclick="startGame()">Play Again</button>
-          ${isConj ? `<button class="action-btn secondary" onclick="nav('verbselect')">${S.conjVerb ? 'Other Verb' : 'Verb List'}</button>` :
-                     `<button class="action-btn secondary" onclick="nav('home')">Main Menu</button>`}
+          <button class="action-btn primary" onclick="startGame()">Play Again</button>
+          ${isConj
+            ? `<button class="action-btn secondary" onclick="nav('verbselect')">${S.conjVerb ? 'Other Verb' : 'Verb List'}</button>`
+            : S.type === 'verbs'
+              ? `<button class="action-btn secondary" onclick="nav('mode')">← Modes</button>`
+              : `<button class="action-btn secondary" onclick="nav('category','words')">← Categories</button>`}
+          <button class="action-btn tertiary" onclick="nav('home')">Home</button>
         </div>
       </div>
     </div>`;

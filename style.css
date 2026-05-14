@@ -390,6 +390,7 @@ button { font-family: inherit; cursor: pointer; }
 .action-btn:active { transform: scale(0.97); opacity: 0.85; }
 .action-btn.primary   { background: var(--sel-border); color: #fff; }
 .action-btn.secondary { background: transparent; border: 2px solid rgba(0,0,0,0.12); color: var(--text-sub); }
+.action-btn.tertiary  { background: transparent; color: var(--text-sub); font-size: 0.88rem; font-weight: 500; padding: 10px; }
 
 @media (prefers-color-scheme: dark) {
   .action-btn.secondary { border-color: rgba(255,255,255,0.12); }
