@@ -5,6 +5,20 @@ const CONFIG = {
   WRONG_FLASH_MS: 700,
 };
 
+const SEIN_VERBS = new Set([
+  'sein', 'werden', 'bleiben', 'gehen', 'kommen', 'fahren', 'laufen', 'rennen',
+  'schwimmen', 'fliegen', 'fallen', 'steigen', 'aufstehen', 'ankommen', 'abfahren',
+  'einschlafen', 'umziehen', 'vorkommen', 'erscheinen', 'verschwinden',
+  'geschehen', 'gelingen', 'stattfinden', 'reiten', 'wandern',
+]);
+
+const AUX_CONJ = {
+  haben: { 'ich': 'habe',  'du': 'hast',  'er/sie/es': 'hat',  'wir': 'haben', 'ihr': 'habt',  'sie/Sie': 'haben' },
+  sein:  { 'ich': 'bin',   'du': 'bist',  'er/sie/es': 'ist',  'wir': 'sind',  'ihr': 'seid',  'sie/Sie': 'sind'  },
+};
+
+const TENSE_LABELS = { praesens: 'Präsens', praeteritum: 'Präteritum', perfekt: 'Perfekt' };
+
 let S = {
   screen: 'home',     // home | category | mode | verbselect | game | complete
   type: null,         // 'words' | 'verbs'
@@ -121,15 +135,20 @@ function tmplMode() {
           <span class="mode-title">Präteritum</span>
           <span class="mode-ex">ich ging, du gingst, er ging …</span>
         </button>
+        <button class="mode-btn conj-btn" onclick="selectConjTense('perfekt')">
+          <span class="mode-title">Perfekt</span>
+          <span class="mode-ex">ich bin gegangen, du bist gegangen …</span>
+        </button>
       </div>
     </div>`;
 }
 
 function tmplVerbSelect() {
-  const tenseLabel = S.conjTense === 'praesens' ? 'Präsens' : 'Präteritum';
-  const rows = S.category.verbs
-    .filter(v => v.konjugation && v.konjugation[S.conjTense])
-    .map(v => `
+  const tLabel = TENSE_LABELS[S.conjTense];
+  const eligible = S.category.verbs.filter(v =>
+    S.conjTense === 'perfekt' ? v.partizip2 : (v.konjugation && v.konjugation[S.conjTense])
+  );
+  const rows = eligible.map(v => `
       <button class="cat-btn" onclick="startConjGame('${v.infinitive}')">
         <span class="cat-name">${v.infinitive}</span>
         <span class="cat-count">${v.en}</span>
@@ -138,10 +157,16 @@ function tmplVerbSelect() {
     <div class="screen">
       <div class="screen-header">
         <button class="back-btn" onclick="nav('mode')">← Back</button>
-        <h2>${tenseLabel}</h2>
+        <h2>${tLabel}</h2>
       </div>
-      <p class="mode-intro">Choose a verb to conjugate:</p>
-      <div class="category-list">${rows}</div>
+      <p class="mode-intro">Choose a verb — or practice all at once:</p>
+      <div class="category-list">
+        <button class="cat-btn all-verbs-btn" onclick="startConjGame(null)">
+          <span class="cat-name">★ Alle Verben</span>
+          <span class="cat-count">${eligible.length} verbs</span>
+        </button>
+        ${rows}
+      </div>
     </div>`;
 }
 
@@ -150,9 +175,13 @@ function tmplGame() {
   const pct   = total > 0 ? (S.matchedCount / total) * 100 : 0;
   const isConj = S.mode === 'konjugation';
 
+  const tLabel = TENSE_LABELS[S.conjTense] || '';
   const instruction = isConj
-    ? `<span class="conj-verb-name">${esc(S.conjVerb.infinitive)}</span>
-       <span class="conj-tense-tag">${S.conjTense === 'praesens' ? 'Präsens' : 'Präteritum'}</span>`
+    ? (S.conjVerb
+      ? `<span class="conj-verb-name">${esc(S.conjVerb.infinitive)}</span>
+         <span class="conj-tense-tag">${tLabel}</span>`
+      : `<span class="conj-verb-name">${esc(S.category.name)}</span>
+         <span class="conj-tense-tag">${tLabel}</span>`)
     : 'Tap the matching pairs';
 
   const colHTML = (cards, side) => cards.map((c, i) => `
@@ -186,7 +215,7 @@ function tmplComplete() {
       <div class="complete-card">
         <div class="trophy">🏆</div>
         <h2>Ausgezeichnet!</h2>
-        <p class="tagline">${isConj ? esc(S.conjVerb.infinitive) + ' — all forms matched!' : 'All pairs matched!'}</p>
+        <p class="tagline">${isConj ? (S.conjVerb ? esc(S.conjVerb.infinitive) + ' — all forms matched!' : 'Alle Verben — done!') : 'All pairs matched!'}</p>
         <div class="result-stats">
           <div class="result-stat">
             <span class="val">${S.moves}</span>
@@ -199,7 +228,7 @@ function tmplComplete() {
         </div>
         <div class="complete-actions">
           <button class="action-btn primary"   onclick="startGame()">Play Again</button>
-          ${isConj ? `<button class="action-btn secondary" onclick="nav('verbselect')">Other Verb</button>` :
+          ${isConj ? `<button class="action-btn secondary" onclick="nav('verbselect')">${S.conjVerb ? 'Other Verb' : 'Verb List'}</button>` :
                      `<button class="action-btn secondary" onclick="nav('home')">Main Menu</button>`}
         </div>
       </div>
@@ -252,8 +281,7 @@ function startGame(mode) {
   if (mode) S.mode = mode;
 
   if (S.mode === 'konjugation') {
-    // Play Again: restart same verb
-    startConjGame(S.conjVerb.infinitive);
+    startConjGame(S.conjVerb ? S.conjVerb.infinitive : null);
     return;
   }
 
@@ -263,8 +291,15 @@ function startGame(mode) {
 }
 
 function startConjGame(infinitive) {
+  if (!infinitive) {
+    S.conjVerb = null;
+    initCards(buildAllConjPairs(S.conjTense));
+    return;
+  }
   S.conjVerb = S.category.verbs.find(v => v.infinitive === infinitive);
-  const pairs = buildConjPairs(S.conjVerb.konjugation[S.conjTense]);
+  const pairs = S.conjTense === 'perfekt'
+    ? buildPerfektPairs(S.conjVerb)
+    : buildConjPairs(S.conjVerb.konjugation[S.conjTense]);
   initCards(pairs);
 }
 
@@ -293,6 +328,33 @@ function buildPairs() {
       case 'partizip2':   return { a: v.infinitive, b: v.partizip2 };
     }
   });
+}
+
+function buildPerfektPairs(verb) {
+  const aux = SEIN_VERBS.has(verb.infinitive) ? 'sein' : 'haben';
+  const auxConj = AUX_CONJ[aux];
+  const pronouns = ['ich', 'du', 'er/sie/es', 'wir', 'ihr', 'sie/Sie'];
+  const formMap = {};
+  pronouns.forEach(p => {
+    const form = auxConj[p] + ' ' + verb.partizip2;
+    if (!formMap[form]) formMap[form] = [];
+    formMap[form].push(p);
+  });
+  return Object.entries(formMap).map(([form, prons]) => ({ a: prons.join(' / '), b: form }));
+}
+
+function buildAllConjPairs(tense) {
+  const verbs = S.category.verbs.filter(v =>
+    tense === 'perfekt' ? v.partizip2 : (v.konjugation && v.konjugation[tense])
+  );
+  const allPairs = [];
+  verbs.forEach(v => {
+    const pairs = tense === 'perfekt'
+      ? buildPerfektPairs(v)
+      : buildConjPairs(v.konjugation[tense]);
+    pairs.forEach(p => allPairs.push({ a: `${p.a} — ${v.infinitive}`, b: p.b }));
+  });
+  return shuffle(allPairs).slice(0, CONFIG.PAIRS_PER_GAME);
 }
 
 function buildConjPairs(konjugation) {
